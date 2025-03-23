@@ -25,7 +25,7 @@ const Navbar = () => {
     <nav ref={navRef} className="fixed top-0 left-0 w-full bg-white shadow-md p-4 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div className="text-xl font-bold text-red-600">Jain Logisitcs
+        <div className="text-xl font-bold text-[#923635]">Jain Logisitcs
         </div>
         
         {/* Mobile Menu Toggle */}
@@ -63,7 +63,7 @@ const Navbar = () => {
         </ul>
 
         {/* Contact Us Button */}
-        <button className="hidden md:block px-6 py-2 bg-black text-white rounded-md hover:bg-red-700 transition">
+        <button className="hidden md:block px-6 py-2 bg-black text-white rounded-md hover:bg-[#923635] transition">
           Contact Us
         </button>
       </div>
