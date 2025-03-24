@@ -5,7 +5,8 @@ import Details from "./components/details";
 import LogisticsProjects from "./components/LogisticsProjects"
 import EdgeFeatures from "./components/EdgeFeatures";
 import Partners from "./components/partners"
-
+import Fotter from './components/fotter'
+import ContactUs from "./components/contactus";
 export default function Home() {
   return (
     <div>
@@ -15,6 +16,8 @@ export default function Home() {
       <LogisticsProjects/>
       <EdgeFeatures/>
       <Partners/>
+      <ContactUs/>
+      <Fotter/>
      
     </div>
   );

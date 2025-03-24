@@ -14,11 +14,10 @@ const Navbar = () => {
 
   const menuItems = [
     { title: "Home" },
-    { title: "About Us", dropdown: ["Our Team", "Our Vision", "History"] },
-    { title: "Services", dropdown: ["Web Development", "SEO", "Marketing"] },
-    { title: "Knowledge Hub", dropdown: ["Blogs", "Case Studies", "Resources"] },
-    { title: "Locations", dropdown: ["India", "USA", "UK"] },
-    { title: "Careers", dropdown: ["Open Positions", "Internships", "Culture"] },
+    { title: "About Us", dropdown: ["Company Overview", "Our Journey", " Our Strengths" ,"Awards & Achievements","Leadership"] },
+    { title: "Services", dropdown: ["Full Truck Load Transportation  ", "Warehouse Management  ", "Part Truck Load Transportation "] },
+    { title: "Knowledge Hub", dropdown: ["News & Blogs", "Technology"] },
+    { title: "Careers" },
   ];
 
   return (
