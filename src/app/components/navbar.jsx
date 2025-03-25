@@ -34,9 +34,9 @@ const Navbar = () => {
       ] 
     },
     { title: "Services", dropdown: [
-        { name: "Full Truck Load Transportation", link: "/services/full-truck-load" },
-        { name: "Warehouse Management", link: "/services/warehouse-management" },
-        { name: "Part Truck Load Transportation", link: "/services/part-truck-load" }
+        { name: "Full Truck Load Transportation", link: "/shops/services/full_truck_load" },
+        { name: "Warehouse Management", link: "/shops/services/Warehouse" },
+        { name: "Part Truck Load Transportation", link: "/shops/services/part_truck_load" }
       ]
     },
     { title: "Knowledge Hub", dropdown: [

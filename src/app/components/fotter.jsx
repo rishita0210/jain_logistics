@@ -4,11 +4,10 @@ import React, { useState } from "react";
 import { FaEnvelope, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const services = [
-  { name: "Freight Services", link: "#" },
-  { name: "Warehousing", link: "#" },
-  { name: "Customs Clearance", link: "#" },
-  { name: "Supply Chain Management", link: "#" },
-  { name: "Road Transport", link: "#" },
+  { name: "Full Truck Load Transportation", link: "/shops/services/full_truck_load" },
+  { name: "Part Truck Load Transportation", link: "/shops/services/part_truck_load" },
+  { name: "Warehouse Management", link: "/shops/services/Warehouse" }
+ 
 ];
 
 const galleryImages = [
@@ -47,7 +46,7 @@ const Footer = () => {
               <li key={index}>
                 <a
                   href={service.link}
-                  className="hover:text-[#923635] transition duration-300 ease-in-out text-lg"
+                  className="hover:text-[#03346E] transition duration-300 ease-in-out text-lg"
                 >
                   {service.name}
                 </a>
@@ -82,7 +81,7 @@ const Footer = () => {
             placeholder="Enter your email"
             className="px-4 py-2 border border-gray-500 bg-[#1E1E28] text-white rounded-l-md w-64 focus:outline-none"
           />
-          <button className="bg-[#923635] text-white px-6 py-2 rounded-r-md hover:bg-[#772828] transition duration-300">
+          <button className="bg-[#03346E] text-white px-6 py-2 rounded-r-md hover:bg-[#772828] transition duration-300">
             Subscribe
           </button>
         </div>
@@ -92,10 +91,10 @@ const Footer = () => {
       <div className="mt-12 text-center text-gray-400">
         <p>&copy; {new Date().getFullYear()} Jain Logistics. All rights reserved.</p>
         <div className="flex justify-center space-x-6 mt-4">
-          <FaFacebook className="cursor-pointer hover:text-[#923635] transition duration-300" size={22} />
-          <FaInstagram className="cursor-pointer hover:text-[#923635] transition duration-300" size={22} />
-          <FaLinkedin className="cursor-pointer hover:text-[#923635] transition duration-300" size={22} />
-          <FaEnvelope className="cursor-pointer hover:text-[#923635] transition duration-300" size={22} />
+          <FaFacebook className="cursor-pointer hover:text-[#03346E] transition duration-300" size={22} />
+          <FaInstagram className="cursor-pointer hover:text-[#03346E] transition duration-300" size={22} />
+          <FaLinkedin className="cursor-pointer hover:text-[#03346E] transition duration-300" size={22} />
+          <FaEnvelope className="cursor-pointer hover:text-[#03346E] transition duration-300" size={22} />
         </div>
       </div>
 

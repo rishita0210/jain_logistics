@@ -2,11 +2,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Navbar from "@/app/components/navbar";
 import ContactUs from "@/app/components/contactus";
 import Fotter from "@/app/components/fotter";
+import Navbar from "@/app/components/navbar";
 
-const FullTruckLoad = () => {
+const PartTruckLoad = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -41,7 +41,7 @@ const FullTruckLoad = () => {
           transition={{ duration: 2 }} 
           className="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold  bg-opacity-30"
         >
-          Reliable & Efficient Full Truck Load Services
+          Reliable & Efficient Part Truck Load Services
         </motion.div>
         <img 
           src="/service-hover.jpg" 
@@ -50,19 +50,19 @@ const FullTruckLoad = () => {
         />
       </div>
     
-      <div className="w-full flex flex-col md:flex-row justify-center items-start text-left mt-8 gap-8 max-w-6xl">
+      <div className="w-full p-5 flex flex-col md:flex-row justify-center items-start text-left mt-8 gap-8 max-w-6xl">
         {/* Left Content */}
         <div className="md:w-1/2">
-          <h1 className="text-4xl font-bold text-[#03346E]">Full Truck Load Transportation</h1>
+          <h1 className="text-4xl font-bold text-[#03346E]">Part Truck Load Transportation</h1>
           <p className="mt-4 text-lg text-gray-700">
-            Our Full Truck Load (FTL) service ensures the fastest and most efficient way to transport bulk goods with dedicated truck capacity, reducing handling time and ensuring timely deliveries.
-          </p>
-          <p className="mt-4 text-lg text-gray-700">
-            With FTL services, your goods are not mixed with other shipments, ensuring security and minimal risk of damage. This service is ideal for businesses requiring large shipments moved safely and quickly across long distances.
-          </p>
-          <p className="mt-4 text-lg text-gray-700">
-            We provide real-time tracking, reliable logistics solutions, and a network of trusted carriers to ensure your cargo reaches its destination seamlessly. Our goal is to optimize your supply chain while offering cost-effective solutions.
-          </p>
+          Our Part Load (PTL) service ensures a cost-effective and efficient way to transport smaller shipments without requiring a full truck. This service is ideal for businesses that need flexible logistics solutions.
+        </p>
+        <p className="mt-4 text-lg text-gray-700">
+          With PTL services, your goods are not mixed with other shipments, ensuring security and minimal risk of damage. This service is ideal for businesses requiring smaller shipments moved safely and efficiently.
+        </p>
+        <p className="mt-4 text-lg text-gray-700">
+          We provide real-time tracking, reliable logistics solutions, and a network of trusted carriers to ensure your cargo reaches its destination seamlessly. Our goal is to optimize your supply chain while offering cost-effective solutions.
+        </p>
           <div className="mt-6">
             <Link href="/contact">
               <button className="px-6 py-2 bg-black text-white rounded-md hover:bg-[#03346E] transition">
@@ -129,7 +129,5 @@ const FullTruckLoad = () => {
   );
 };
 
-export default FullTruckLoad;
-
-
-
+export default PartTruckLoad;
+  
