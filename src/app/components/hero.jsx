@@ -6,7 +6,7 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/hero.jpeg" 
+          src="/hero.jpg" 
           alt="Background"
           layout="fill"
           objectFit="cover"
@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6">
         {/* Left Side Text */}
         <div className="md:w-1/2 text-white">
-          <h1 className="text-4xl md:text-6xl font-bold text-yellow-400 mt-10 mb-4">Jain Logisitcs</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-[#E2E2B6] mt-10 mb-4">Jain Logisitcs</h1>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             India's Leading <br/> Logistics Partner
           </h1>

@@ -2,30 +2,56 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
+import Link from "next/link";
 
 const Navbar = () => {
   const navRef = useRef(null);
   const [dropdown, setDropdown] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  let timeoutId;
 
   useEffect(() => {
     gsap.from(navRef.current, { opacity: 0, y: -20, duration: 1, ease: "power3.out" });
   }, []);
 
+  const handleMouseEnter = (index) => {
+    clearTimeout(timeoutId);
+    setDropdown(index);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutId = setTimeout(() => setDropdown(null), 200);
+  };
+
   const menuItems = [
-    { title: "Home" },
-    { title: "About Us", dropdown: ["Company Overview", "Our Journey", " Our Strengths" ,"Awards & Achievements","Leadership"] },
-    { title: "Services", dropdown: ["Full Truck Load Transportation  ", "Warehouse Management  ", "Part Truck Load Transportation "] },
-    { title: "Knowledge Hub", dropdown: ["News & Blogs", "Technology"] },
-    { title: "Careers" },
+    { title: "Home", link: "/" },
+    { title: "About Us", dropdown: [
+        { name: "Company Overview", link: "/about/company-overview" },
+        { name: "Our Journey", link: "/about/our-journey" },
+        { name: "Our Strengths", link: "/about/our-strengths" },
+        { name: "Awards & Achievements", link: "/about/awards" },
+        { name: "Leadership", link: "/about/leadership" }
+      ] 
+    },
+    { title: "Services", dropdown: [
+        { name: "Full Truck Load Transportation", link: "/services/full-truck-load" },
+        { name: "Warehouse Management", link: "/services/warehouse-management" },
+        { name: "Part Truck Load Transportation", link: "/services/part-truck-load" }
+      ]
+    },
+    { title: "Knowledge Hub", dropdown: [
+        { name: "News & Blogs", link: "/knowledge-hub/news-blogs" },
+        { name: "Technology", link: "/knowledge-hub/technology" }
+      ]
+    },
+    { title: "Careers", link: "/careers" }
   ];
 
   return (
     <nav ref={navRef} className="fixed top-0 left-0 w-full bg-white shadow-md p-4 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div className="text-xl font-bold text-[#923635]">Jain Logisitcs
-        </div>
+        <div className="text-xl font-bold text-[#03346E]">Jain Logistics</div>
         
         {/* Mobile Menu Toggle */}
         <div className="md:hidden cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
@@ -38,33 +64,41 @@ const Navbar = () => {
             <li
               key={index}
               className="relative group cursor-pointer px-4 py-2 md:p-0"
-              onMouseEnter={() => setDropdown(item.dropdown ? index : null)}
-              onMouseLeave={() => setDropdown(null)}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
             >
-              <div className="flex items-center space-x-1 hover:text-red-600">
-                <span>{item.title}</span>
-                {item.dropdown && <FaChevronDown className="text-sm" />}
-              </div>
+              {item.link ? (
+                <Link href={item.link} className="flex items-center space-x-1 hover:text-[#03346E]">
+                  <span>{item.title}</span>
+                </Link>
+              ) : (
+                <div className="flex items-center space-x-1 hover:text-[#03346E]">
+                  <span>{item.title}</span>
+                  {item.dropdown && <FaChevronDown className="text-sm" />}
+                </div>
+              )}
               {item.dropdown && dropdown === index && (
-                <ul className="absolute left-0 mt-2 w-48 bg-white shadow-md border rounded-md py-2">
+                <div className="absolute left-0 mt-2 w-48 bg-white shadow-md border rounded-md py-2"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                >
                   {item.dropdown.map((subItem, subIndex) => (
-                    <li
-                      key={subIndex}
-                      className="px-4 py-2 hover:bg-gray-100 text-gray-700"
-                    >
-                      {subItem}
-                    </li>
+                    <Link key={subIndex} href={subItem.link}>
+                      <div className="px-4 py-2 hover:bg-gray-100 text-gray-700">{subItem.name}</div>
+                    </Link>
                   ))}
-                </ul>
+                </div>
               )}
             </li>
           ))}
         </ul>
 
         {/* Contact Us Button */}
-        <button className="hidden md:block px-6 py-2 bg-black text-white rounded-md hover:bg-[#923635] transition">
-          Contact Us
-        </button>
+        <Link href="/contact">
+          <button className="hidden md:block px-6 py-2 bg-black text-white rounded-md hover:bg-[#03346E] transition">
+            Contact Us
+          </button>
+        </Link>
       </div>
     </nav>
   );

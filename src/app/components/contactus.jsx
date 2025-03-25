@@ -225,7 +225,7 @@ const ContactUs = () => {
         <h1 ref={titleRef} className="relative text-white text-4xl md:text-5xl font-bold">
           LOOKING FOR THE BEST LOGISTICS <br /> SERVICE?
         </h1>
-        <button className="relative mt-4 px-6 py-3 bg-[#772828] text-white font-semibold rounded-lg hover:bg-[#772828] transition">
+        <button className="relative mt-4 px-6 py-3 bg-[#FBF5E5] text-black font-semibold rounded-lg hover:bg-[#03346E] hover:text-amber-100 transition">
           Contact Us
         </button>
       </div>

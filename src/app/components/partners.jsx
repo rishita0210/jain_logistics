@@ -4,11 +4,13 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 const partners = [
-  { id: 1, logo: "/img/partner1.webp", name: "Partner A" },
-  { id: 2, logo: "/img/partner2.webp", name: "Partner B" },
-  { id: 3, logo: "/img/partner3.webp", name: "Partner C" },
-  { id: 4, logo: "/img/partner4.webp", name: "Partner D" },
-  { id: 5, logo: "/img/partner5.webp", name: "Partner E" },
+  { id: 1, logo: "/partner1.png" },
+  { id: 2, logo: "/partner2.png" },
+  { id: 3, logo: "/partner3.png" },
+  { id: 4, logo: "/partner4.png" },
+  { id: 5, logo: "/partner5.png" },
+  { id: 6, logo: "/partner6.png" },
+  { id: 7, logo: "/partner7.png" },
 ];
 
 const TrustedRelationships = () => {

@@ -1,122 +1,80 @@
 "use client"
 import React, { useEffect, useRef } from "react";
-import { FaRegFileCode } from "react-icons/fa6";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const logisticsServices = [
-  {
-    id: 1,
-    title: "Freight Management",
-    description:
-      "Efficient freight handling and real-time tracking for optimized logistics operations.",
-    image: "/services.jpg",
-    codeLink: "#",
-  },
-  {
-    id: 2,
-    title: "Supply Chain Solutions",
-    description:
-      "End-to-end supply chain solutions ensuring smooth and reliable transportation.",
-      image: "/services.jpg",
-    codeLink: "#",
-  },
-  {
-    id: 3,
-    title: "Warehousing Services",
-    description:
-      "Secure and efficient warehousing solutions with automated inventory management.",
-      image: "/services.jpg",
-    codeLink: "#",
-  },
-  {
-    id: 4,
-    title: "Last Mile Delivery",
-    description:
-      "Fast and reliable last-mile delivery services for businesses and consumers.",
-      image: "/services.jpg",
-    codeLink: "#",
-  },
-  {
-    id: 5,
-    title: "Customs Clearance",
-    description: "Seamless and hassle-free customs clearance for international shipments.",
-    image: "/services.jpg",
-    codeLink: "#",
-  },
+
+const skills = [
+  { title: "Full Truck Load Transportation  ", bgColor: "bg-[#6EACDA]", direction: "left", description: " Fast, secure, and cost-effective bulk shipping." },
+  { title: "Warehouse Management  ", bgColor: "bg-[#E2E2B6]", direction: "right", description: "Smart storage, seamless dispatch." },
+  { title: "Part Truck Load Transportation  ", bgColor: "bg-[#6EACDA]", direction: "top", description: "Pay only for the space you use." },
+  
 ];
 
+
+
 const LogisticsProjects = () => {
-  const projectsRef = useRef(null);
-  const sectionRef = useRef(null);
+  const containerRef = useRef(null);
+  const skillRefs = useRef([]);
 
   useEffect(() => {
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    if (!containerRef.current) return;
 
-    if (!projectsRef.current || !sectionRef.current) return;
-
-    const totalScrollWidth = projectsRef.current.scrollWidth;
-    const viewportWidth = window.innerWidth;
-    const maxScroll = totalScrollWidth - viewportWidth;
-
-    gsap.to(projectsRef.current, {
-      x: -maxScroll,
-      ease: "power2.out",
+    const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: sectionRef.current,
+        trigger: containerRef.current,
         start: "top top",
-        end: () => `+=${maxScroll}`,
+        end: "+=250%", 
+        scrub: 2, 
         pin: true,
-        scrub: 1.5,
-        invalidateOnRefresh: true,
-        id: "projects-scroll",
       },
+    });
+
+    skills.forEach((skill, index) => {
+      let xValue = "0%", yValue = "0%";
+
+      if (skill.direction === "left") xValue = "-100%";
+      if (skill.direction === "right") xValue = "100%";
+      if (skill.direction === "top") yValue = "-100%";
+      if (skill.direction === "bottom") yValue = "100%";
+
+      tl.fromTo(
+        skillRefs.current[index],
+        { x: xValue, y: yValue, opacity: 0 },
+        {
+          x: "0%",
+          y: "0%",
+          opacity: 1,
+          duration: 1.2,
+          ease: "power3.out",
+        },
+        index * 0.4 
+      );
     });
   }, []);
 
   return (
-    <section ref={sectionRef} id="Projects" className="relative bg-[#F6F4EF] text-white h-screen overflow-hidden">
-      <div className="text-center lg:text-left pt-20 pb-10 px-6 md:px-24">
-        
-        <h1 className="text-3xl iteam-centre justify-center font-bold text-[#923635] ">
-        OUR RANGE <br/>
-        OF LOGISTICS SERVICES
-        </h1>
-      </div>
-
-      <div className="relative w-full h-full overflow-hidden">
+    <div ref={containerRef} className="relative min-h-screen h-[90vh] w-full overflow-hidden">
+      {skills.map((skill, index) => (
         <div
-          ref={projectsRef}
-          className="flex space-x-6 sm:space-x-10 md:space-x-14 px-6 md:px-24 items-center snap-x snap-mandatory"
+          key={index}
+          ref={(el) => (skillRefs.current[index] = el)}
+          className={`absolute inset-0 flex items-center justify-center ${skill.bgColor} text-white text-2xl sm:text-3xl md:text-4xl font-bold px-4 text-center`}
         >
-          {logisticsServices.map((service) => (
-            <div
-              key={service.id}
-              className="w-48 sm:w-64 md:w-72 flex-shrink-0 bg-beige rounded-lg shadow-lg overflow-hidden snap-center"
-            >
-              <div className="w-full h-40 sm:h-48 md:h-56">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              <div className="p-3 bg-white">
-                <h3 className="text-sm sm:text-base font-semibold text-gray-900">{service.title}</h3>
-                <p className="text-gray-700 text-xs sm:text-sm mt-1">{service.description}</p>
-              </div>
+          <div className="font-bold lilita-one sm:text-xs md:text-xl lg:text-2xl text-black">
+          {skill.title}<br/>
+          {skill.description}
             </div>
-          ))}
-
-          <div className="w-[40vw] sm:w-[30vw] md:w-[20vw] h-72 flex-shrink-0"></div>
+          
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
   );
 };
 
 export default LogisticsProjects;
+
+
 
