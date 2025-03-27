@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/app/components/navbar";
 import ContactUs from "@/app/components/contactus";
-import Fotter from "@/app/components/fotter";
+// import Fotter from "@/app/components/Footer";
 
 const FullTruckLoad = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +26,7 @@ const FullTruckLoad = () => {
   return (
     <div className="w-full flex flex-col items-center text-center ">
       <div>
-        <Navbar/>
+        {/* <Navbar/> */}
       </div>
       <div className="w-full h-96 relative overflow-hidden group">
         <img 
@@ -121,10 +121,10 @@ const FullTruckLoad = () => {
         </div>
       </div>
 
-      <div className="w-full mt-12">
-        <ContactUs />
+      {/* <div className="w-full mt-12"> */}
+        {/* <ContactUs />
         <Fotter />
-      </div>
+      </div> */}
     </div>
   );
 };

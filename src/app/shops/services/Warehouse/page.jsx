@@ -134,7 +134,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import ContactUs from "@/app/components/contactus";
-import Fotter from "@/app/components/fotter";
+// import Fotter from "@/app/components/Footer";
 import Navbar from "@/app/components/navbar";
 
 const Warehouse = () => {
@@ -158,7 +158,7 @@ const Warehouse = () => {
     
     <div className="w-full flex flex-col items-center text-center ">
         <div>
-            <Navbar/>
+            {/* <Navbar/> */}
         </div>
       <div className="w-full h-[400px] relative overflow-hidden group">
         <img 
@@ -253,8 +253,8 @@ const Warehouse = () => {
       </div>
 
       <div className="w-full mt-12">
-        <ContactUs />
-        <Fotter />
+        {/* <ContactUs /> */}
+        {/* <Fotter /> */}
       </div>
     </div>
   );

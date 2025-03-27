@@ -20,34 +20,33 @@ const TrustedRelationships = () => {
     if (!carouselRef.current) return;
 
     gsap.to(carouselRef.current, {
-      xPercent: -50 * (partners.length / 2), // Moves carousel
+      xPercent: -50 * (partners.length / 2),
       ease: "linear",
-      duration: 15, // Slower movement
-      repeat: -1, // Infinite loop
+      duration: 15,
+      repeat: -1,
     });
-
   }, []);
 
   return (
-    <section className="bg-[#FBF8EE] py-16 px-6 md:px-24 text-center">
-      <h2 className="text-4xl font-bold text-gray-900 mb-10">
+    <section className="bg-[#FBF8EE] py-16 px-4 md:px-12 lg:px-24 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
         Our Trusted Relationships
       </h2>
 
       {/* Carousel Container */}
-      <div className="relative overflow-hidden w-full">
+      <div className="relative overflow-hidden w-full max-w-6xl mx-auto">
         <div
           ref={carouselRef}
-          className="flex space-x-10 w-max"
+          className="flex space-x-6 md:space-x-10 w-max"
         >
-          {[...partners, ...partners].map((partner, index) => ( // Duplicated for smooth loop
+          {[...partners, ...partners].map((partner, index) => (
             <div
               key={index}
-              className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center w-40 h-40"
+              className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center w-28 h-28 md:w-40 md:h-40"
             >
               <img
                 src={partner.logo}
-                alt={partner.name}
+                alt={`Partner ${partner.id}`}
                 className="w-full h-full object-contain"
               />
             </div>
@@ -59,4 +58,5 @@ const TrustedRelationships = () => {
 };
 
 export default TrustedRelationships;
+
 

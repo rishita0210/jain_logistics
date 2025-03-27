@@ -2,8 +2,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import ContactUs from "@/app/components/contactus";
-import Fotter from "@/app/components/fotter";
+// import ContactUs from "@/app/components/contactus";
+// import Fotter from "@/app/components/Footer";
 import Navbar from "@/app/components/navbar";
 
 const PartTruckLoad = () => {
@@ -121,10 +121,10 @@ const PartTruckLoad = () => {
         </div>
       </div>
 
-      <div className="w-full mt-12">
+      {/* <div className="w-full mt-12">
         <ContactUs />
         <Fotter />
-      </div>
+      </div> */}
     </div>
   );
 };

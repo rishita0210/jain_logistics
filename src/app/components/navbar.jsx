@@ -26,11 +26,11 @@ const Navbar = () => {
   const menuItems = [
     { title: "Home", link: "/" },
     { title: "About Us", dropdown: [
-        { name: "Company Overview", link: "/about/company-overview" },
-        { name: "Our Journey", link: "/about/our-journey" },
-        { name: "Our Strengths", link: "/about/our-strengths" },
-        { name: "Awards & Achievements", link: "/about/awards" },
-        { name: "Leadership", link: "/about/leadership" }
+        { name: "Company Overview", link: "/shops/about/Company-overview" },
+        { name: "Our Journey", link: "/shops/about/Our_Journey" },
+        { name: "Our Strengths", link: "/shops/about/Our_Strength" },
+       
+        { name: "Leadership", link: "/shops/about/leadership" },
       ] 
     },
     { title: "Services", dropdown: [
