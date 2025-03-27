@@ -44,7 +44,7 @@ const Navbar = () => {
         { name: "Technology", link: "/knowledge-hub/technology" }
       ]
     },
-    { title: "Careers", link: "/careers" }
+    // { title: "Careers", link: "/careers" }
   ];
 
   return (

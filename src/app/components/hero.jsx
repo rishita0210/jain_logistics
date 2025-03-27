@@ -22,9 +22,9 @@ const Hero = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             India's Leading <br/> Logistics Partner
           </h1>
-          <button className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
+          {/* <button className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
             Get Started
-          </button>
+          </button> */}
         </div>
 
         {/* Right Side Overlapping Image */}
