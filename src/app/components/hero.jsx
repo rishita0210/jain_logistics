@@ -20,13 +20,28 @@ const Hero = () => {
         <div className=" text-white flex flex-col gap-5 text-center">
           <div className="hiddendiv2">
 
-          <h1 className="text-5xl md:text-5xl font-bold text-[#E2E2B6]  main-page-text">Jain Logisitcs</h1>
+          <h1 className="text-5xl md:text-5xl font-bold text-[#E2E2B6] mb-2 main-page-text">Jain Logisitcs</h1>
           </div>
-          <div className="hiddendiv">
+          <div className="hidden md:block ">
 
-          <h1 className="text-4xl  typing md:text-5xl font-bold mb-6">
-            India's Leading  Logistics Partner
+<h1 className="text-4xl     text-nowrap typing md:text-5xl font-bold mb-6">
+  India's Leading    Logistics Partner
+</h1>
+</div>
+          <div className="flex md:hidden flex-col gap-0 ">
+
+          <div className="hiddendiv ">
+
+          <h1 className="text-4xl    text-nowrap typing md:text-5xl font-bold mb-6">
+            India's Leading  
           </h1>
+          </div>
+          <div className="hiddendiv ">
+
+          <h1 className="text-4xl    text-nowrap typing md:text-5xl font-bold mb-6">
+            Logistics Partner
+          </h1>
+          </div>
           </div>
          
           
