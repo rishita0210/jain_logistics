@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+// import { TypeAnimation } from "react-type-animation";
 const Hero = () => {
   return (
     <section className="relative w-full h-screen flex items-center justify-center bg-gray-900">
@@ -15,13 +15,20 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between  ">
         {/* Left Side Text */}
-        <div className="md:w-1/2 text-white">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#E2E2B6] mt-10 mb-4">Jain Logisitcs</h1>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className=" text-white flex flex-col gap-5 text-center">
+          <div className="hiddendiv2">
+
+          <h1 className="text-5xl md:text-5xl font-bold text-[#E2E2B6]  main-page-text">Jain Logisitcs</h1>
+          </div>
+          <div className="hiddendiv">
+
+          <h1 className="text-4xl  typing md:text-5xl font-bold mb-6">
             India's Leading  Logistics Partner
           </h1>
+          </div>
+         
           
         </div>
 
